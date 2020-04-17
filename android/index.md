@@ -24,12 +24,22 @@
 
 1. Notification Importance is set on notification channel while priority is set on notification, it distinguish by android version supported it.
 
-## Notes about Android Component:
+## Notes about Android Component
 
 1. ContentProvider: Implementation class from android that enables an application to publicly expose its interface to access data storage (sqlite database) for other application to access it. It associates with URI that contains the authorities defined from application that owns the ContentProvider.
 2. CursorLoader: We use this in order to create a cursor to load sqlite data at background thread. By using content provider we can create a new instance of CursorLoader that receives specificied “content://“ URI in the constructor.
 3. StrictMode class from Android is use to detect undesired work like IO operations on main thread (Thread Policy), it can show warning or even throw exception.
 4. By default, calling Handler in main thread is equals to Handler(Looper.getMainLooper())
+
+## RxJava
+
+1. It is possible to reduce duplicate code of subscribeOn and observeOn boilerplate other than using kotlin extension when performing network IO operations (with MVVM and LiveData). Basically, we don't need to add ```observeOn(AndroidSchedulers.mainThread())``` on our code because of 'observe' implementation of LiveData will enforce the implementation to run on main thread. So the problem now is where should we reduce the boilerplate of ```subscribeOn```. We can solve it by providing RxJavaAdapter in retrofit with a default IO scheduler so every IO operations will automatically run on the schedulers defined. It's not a problem to define a specific schedulers to retrofit because the main function of retrofit itself acts a HTTP client that is performed as IO operations.
+
+```kotlin
+.addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+```
+
+By this code every threads called upon IO operations will subsribe using IO Schedulers as default.
 
 ## Useful Code
 
