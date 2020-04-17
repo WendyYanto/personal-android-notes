@@ -39,7 +39,7 @@
 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
 ```
 
-By this code every threads called upon IO operations will subsribe using IO Schedulers as default.
+By this code every threads called upon retrofit callback will subsribe using IO Schedulers as default.
 
 ## Useful Code
 
