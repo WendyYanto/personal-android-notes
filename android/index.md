@@ -30,6 +30,10 @@
 2. CursorLoader: We use this in order to create a cursor to load sqlite data at background thread. By using content provider we can create a new instance of CursorLoader that receives specificied “content://“ URI in the constructor.
 3. StrictMode class from Android is use to detect undesired work like IO operations on main thread (Thread Policy), it can show warning or even throw exception.
 4. By default, calling Handler in main thread is equals to Handler(Looper.getMainLooper())
+5. Main difference of services and job schedulers :
+    a. Service execution controlled by application while job schedulers execution controlled  by system
+    b. Service runs immediately while job schedulers run on criteria defined
+    c. Job schedulers allow android to provide better management of system resources
 
 ## RxJava
 
