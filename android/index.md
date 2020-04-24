@@ -45,6 +45,10 @@
 
 By this code every threads called upon retrofit callback will subsribe using IO Schedulers as default.
 
+## RecycleView
+
+1. ```getAdapterPosition()``` returns current position of view holder in the rendered view while ```getLayoutPosition()``` returns the adapter position of the ViewHolder in the latest layout pass (after rendered).
+
 ## Useful Code
 
 ```kotlin
