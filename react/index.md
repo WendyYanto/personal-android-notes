@@ -1,4 +1,6 @@
-# React.PureComponent
+# React
+
+## React.PureComponent
 
 1. Use React.PureComponent will not re-render if props and states value stay the same even though parent component re-renders
 2. It compares the old and new value by using shallow comparison (by object reference), so to make it to render effectively we should use immutable value specially when dealing with objects and arrays
