@@ -20,3 +20,7 @@ const MemoizedComponent = React.memo(Component, areEqual);
 ## ShouldComponentUpdate
 
 1. It is a boolean-return function that accept next prop's update value. This will cause rendering if this function return true.
+
+## React.useMemo
+
+1. It is react hooks to help developer to cache value and it's dependency (parameter) when executing expensive task that has time complexity of n^2 to 2^n.
