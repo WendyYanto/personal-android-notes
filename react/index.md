@@ -23,4 +23,4 @@ It is a boolean-return function that accept next prop's update value. This will 
 
 ## React.useMemo
 
-It is react hooks to help developer to cache value and it's dependency (parameter) when executing expensive task that has time complexity of n^2 to 2^n.
+It is react hooks to help developer to cache value and it's dependency (parameter) when executing expensive task that has time complexity of n^2 to 2^n
