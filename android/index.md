@@ -56,6 +56,14 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 3. We can create sequence of frame animation by using ```<animation-list>``` and ```<item android:drawable>``` xml, set it as background of view then type cast it AnimateDrawable to execute ```start()```
 4. AnimateVectorDrawable is used to animate vector logo
 
+## Transition
+
+1. In order to apply transition between view in different layout, it's id should be the same
+2. Scene object is used to indicate transition between start and ending layout and it needs frame layout's sceneRoot object ```Scene.getSceneForLayout()```
+3. TransitionManager object is used to execute the transition ```TransitionManager.go()```
+4. TransitionInflater object is used to inflate transition xml
+5. Layout should contain FrameLayout to perform transition between layout
+
 ## Useful Code
 
 ```kotlin
