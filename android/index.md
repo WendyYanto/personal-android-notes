@@ -49,6 +49,13 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 
 1. ```getAdapterPosition()``` returns current position of view holder in the rendered view while ```getLayoutPosition()``` returns the adapter position of the ViewHolder in the latest layout pass (after rendered).
 
+## Animation
+
+1. AnimatorSet is used to provide multiple animation at the same time or sequentially
+2. ViewPropertyAnimator ```view.animate()``` is used to execute defined animation at the same time only
+3. We can create sequence of frame animation by using ```<animation-list>``` and ```<item android:drawable>``` xml, set it as background of view then type cast it AnimateDrawable to execute ```start()```
+4. AnimateVectorDrawable is used to animate vector logo
+
 ## Useful Code
 
 ```kotlin
