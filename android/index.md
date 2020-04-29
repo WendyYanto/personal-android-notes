@@ -31,13 +31,13 @@
 3. StrictMode class from Android is use to detect undesired work like IO operations on main thread (Thread Policy), it can show warning or even throw exception.
 4. By default, calling Handler in main thread is equals to Handler(Looper.getMainLooper())
 5. Main difference of services and job schedulers :
-    * Service execution controlled by application while job schedulers execution controlled  by system
-    * Service runs immediately while job schedulers run on criteria defined
-    * Job schedulers allow android to provide better management of system resources
+   - Service execution controlled by application while job schedulers execution controlled by system
+   - Service runs immediately while job schedulers run on criteria defined
+   - Job schedulers allow android to provide better management of system resources
 
 ## RxJava
 
-1. It is possible to reduce duplicate code of subscribeOn and observeOn boilerplate other than using kotlin extension when performing network IO operations (with MVVM and LiveData). Basically, we don't need to add ```observeOn(AndroidSchedulers.mainThread())``` on our code because of 'observe' implementation of LiveData will enforce the implementation to run on main thread. So the problem now is where should we reduce the boilerplate of ```subscribeOn```. We can solve it by providing RxJavaAdapter in retrofit with a default IO scheduler so every IO operations will automatically run on the schedulers defined. It's not a problem to define a specific schedulers to retrofit because the main function of retrofit itself acts a HTTP client that is performed as IO operations.
+1. It is possible to reduce duplicate code of subscribeOn and observeOn boilerplate other than using kotlin extension when performing network IO operations (with MVVM and LiveData). Basically, we don't need to add `observeOn(AndroidSchedulers.mainThread())` on our code because of 'observe' implementation of LiveData will enforce the implementation to run on main thread. So the problem now is where should we reduce the boilerplate of `subscribeOn`. We can solve it by providing RxJavaAdapter in retrofit with a default IO scheduler so every IO operations will automatically run on the schedulers defined. It's not a problem to define a specific schedulers to retrofit because the main function of retrofit itself acts a HTTP client that is performed as IO operations.
 
 ```kotlin
 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
@@ -47,22 +47,34 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 
 ## RecycleView
 
-1. ```getAdapterPosition()``` returns current position of view holder in the rendered view while ```getLayoutPosition()``` returns the adapter position of the ViewHolder in the latest layout pass (after rendered).
+1. `getAdapterPosition()` returns current position of view holder in the rendered view while `getLayoutPosition()` returns the adapter position of the ViewHolder in the latest layout pass (after rendered).
 
 ## Animation
 
 1. AnimatorSet is used to provide multiple animation at the same time or sequentially
-2. ViewPropertyAnimator ```view.animate()``` is used to execute defined animation at the same time only
-3. We can create sequence of frame animation by using ```<animation-list>``` and ```<item android:drawable>``` xml, set it as background of view then type cast it AnimateDrawable to execute ```start()```
+2. ViewPropertyAnimator `view.animate()` is used to execute defined animation at the same time only
+3. We can create sequence of frame animation by using `<animation-list>` and `<item android:drawable>` xml, set it as background of view then type cast it AnimateDrawable to execute `start()`
 4. AnimateVectorDrawable is used to animate vector logo
 
 ## Transition
 
 1. In order to apply transition between view in different layout, it's id should be the same
-2. Scene object is used to indicate transition between start and ending layout and it needs frame layout's sceneRoot object ```Scene.getSceneForLayout()```
-3. TransitionManager object is used to execute the transition ```TransitionManager.go()```
+2. Scene object is used to indicate transition between start and ending layout and it needs frame layout's sceneRoot object `Scene.getSceneForLayout()`
+3. TransitionManager object is used to execute the transition `TransitionManager.go()`
 4. TransitionInflater object is used to inflate transition xml
 5. Layout should use ViewGroup's sceneRoot to perform transition between layout
+
+## ConstraintLayout
+
+1. Use ConstraintBaseline to align text (if multiple line, baseline is most top) with other content with text. By using this baseline, the text will always align to the text of other view no matter what changes of the view's height are
+2. Setting ` layout_width`` or `layout_height``` to 0dp will cause it to match the measurement of it's height or width to the constraint
+3. ConstraintBias allows us to modify specific position we desire of a view in a constraint, it can only applied if required constraint are filled (top & bottom) or (start or end)
+4. ConstraintChain allows us to equally distribute view in a layout just like flex functions in css
+5. Types of chains:
+    - Spread: spread spaces around item evenly
+    - Packed: organize items together as a packed item
+    - Spread Inside: organize item with space between evenly
+    - Weighted: organize item by weight provided as scale
 
 ## Useful Code
 
