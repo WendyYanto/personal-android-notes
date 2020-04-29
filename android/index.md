@@ -67,7 +67,7 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 ## ConstraintLayout
 
 1. Use ConstraintBaseline to align text (if multiple line, baseline is most top) with other content with text. By using this baseline, the text will always align to the text of other view no matter what changes of the view's height are
-2. Setting ` layout_width`` or `layout_height``` to 0dp will cause it to match the measurement of it's height or width to the constraint
+2. Setting `layout_width` or `layout_height` to 0dp will cause it to match the measurement of it's height or width to the constraint
 3. ConstraintBias allows us to modify specific position we desire of a view in a constraint, it can only applied if required constraint are filled (top & bottom) or (start or end)
 4. ConstraintChain allows us to equally distribute view in a layout just like flex functions in css
 5. Types of chains:
