@@ -1,19 +1,4 @@
-# Kotlin & Android Notes
-
-## Coroutine
-
-1. Job will stop execution of remaining child jobs if one of it’s child throws exception while SupervisorJob doesn’t affect other remaining child thread.
-2. Use CoroutineExceptionHandler as lambda handler to catch exception in coroutine and it’s should be placed at the root launch keyword.
-3. To implement synchronized java thread in kotlin when using coroutine, use mutex.
-   Example:
-
-   ```kotlin
-   suspend fun synchronizeCoroutine() {
-       mutex.withLock {
-           // Execute Coroutine Job
-       }
-   }
-   ```
+# Android Notes
 
 ## Work Manager
 
@@ -76,18 +61,6 @@ By this code every threads called upon retrofit callback will subsribe using IO 
    - Spread Inside: organize item with space between evenly
    - Weighted: organize item by weight provided as scale
 6. ConstraintLayout's guideline and barrier (for dynamic view size) to help aligning view component horizontally or vertically
-
-## Useful Code
-
-```kotlin
-fun Context.convertDpToPx(dp: Float): Float {
-    return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            dp,
-            this.resources.displayMetrics
-    )
-}
-```
 
 ## Important References
 
