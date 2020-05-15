@@ -48,6 +48,28 @@ infix fun <T> List<T>.combineWith(List<T> other): List<T> {
 val list = listOf(1,2,3) combineWith listOf(4,5,6)
 ```
 
+## Operator
+
+it add functionality to operator to perform certain jobs.
+Example:
+
+```kotlin
+public operator fun <T> Collection<T>.plus(elements: Iterable<T>): List<T> {
+    if (elements is Collection) {
+        val result = ArrayList<T>(this.size + elements.size)
+        result.addAll(this)
+        result.addAll(elements)
+        return result
+    } else {
+        val result = ArrayList<T>(this)
+        result.addAll(elements)
+        return result
+    }
+}
+//Usage
+val lists = listOf(1,2,3,4) + setOf(5,5,5,5,5,6)
+```
+
 ## Useful Code
 
 ```kotlin
