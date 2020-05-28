@@ -62,6 +62,10 @@ By this code every threads called upon retrofit callback will subsribe using IO 
    - Weighted: organize item by weight provided as scale
 6. ConstraintLayout's guideline and barrier (for dynamic view size) to help aligning view component horizontally or vertically
 
+## ImageView
+
+1. ImageView's scaleType visualization
+
 ## Important References
 
 1. <https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c>
