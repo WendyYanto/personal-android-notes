@@ -71,3 +71,4 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 1. <https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c>
 2. <https://medium.com/androiddevelopers/dagger-code-generation-cheat-sheets-6b4fa2da4e7a>
 3. <https://openclassrooms.com/en/courses/4561586-manage-your-data-to-have-a-100-offline-android-app/5770976-expose-your-data-with-a-contentprovider>
+4. <https://thoughtbot.com/blog/android-imageview-scaletype-a-visual-guide>
