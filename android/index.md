@@ -66,6 +66,8 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 
 1. ImageView's scaleType visualization
 
+![ImageView ScaleType](../android/assets/scale_type.png)
+
 ## Important References
 
 1. <https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c>
