@@ -70,6 +70,18 @@ public operator fun <T> Collection<T>.plus(elements: Iterable<T>): List<T> {
 val lists = listOf(1,2,3,4) + setOf(5,5,5,5,5,6)
 ```
 
+## Semantic Validation
+Java way
+```java
+Preconditions.checkArgument(validate(), "error message")
+```
+
+Kotlin way
+```kotlin
+val validate = () -> Boolean
+require(validate.invoke()) { "error message" }
+```
+
 ## Useful Code
 
 ```kotlin
