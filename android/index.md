@@ -68,6 +68,11 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 
 ![ImageView ScaleType](../android/assets/scale_type.png)
 
+## App Feature Toggle (Configurable feature on client side)
+
+1. Feature toggle can be done very simple by implementation of dynamic feature delivery. It downloads only when user wants to use it which means lesser bytes for user to download
+2. Other approach if current feature is tightly coupled with existing feature is using fragment by setup framelayout in existing layout then inflate only when it is needed
+
 ## Important References
 
 1. <https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c>
