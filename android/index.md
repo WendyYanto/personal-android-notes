@@ -82,3 +82,4 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 5. <https://www.michaelagreiler.com/code-review-checklist-2>
 6. <https://chiuki.github.io/android-shaders-filters/#/>
 7. <https://medium.com/better-programming/which-android-animator-to-use-ced54e21d317>
+8. <https://hackernoon.com/checking-debug-build-the-right-way-d12da1098120>
