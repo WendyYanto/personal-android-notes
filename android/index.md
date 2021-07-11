@@ -68,6 +68,11 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 
 ![ImageView ScaleType](../android/assets/scale_type.png)
 
+## App Feature Toggle (Configurable feature on client side)
+
+1. Feature toggle can be done very simple by implementation of dynamic feature delivery. It downloads only when user wants to use it which means lesser bytes for user to download
+2. Other approach if current feature is tightly coupled with existing feature is using fragment by setup framelayout in existing layout then inflate only when it is needed
+
 ## Important References
 
 1. <https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c>
@@ -76,4 +81,7 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 4. <https://thoughtbot.com/blog/android-imageview-scaletype-a-visual-guide>
 5. <https://www.michaelagreiler.com/code-review-checklist-2>
 6. <https://chiuki.github.io/android-shaders-filters/#/>
-7. Material Component <https://blog.octo.com/en/android-materialshapedrawable>
+7. <https://medium.com/better-programming/which-android-animator-to-use-ced54e21d317>
+8. <https://hackernoon.com/checking-debug-build-the-right-way-d12da1098120>
+9. <https://medium.com/better-programming/shape-drawables-the-most-powerful-tool-for-your-android-ui-e5c2b1ab9eef>
+10. Material Component <https://blog.octo.com/en/android-materialshapedrawable>

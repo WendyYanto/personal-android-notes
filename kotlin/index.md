@@ -96,3 +96,12 @@ fun Context.convertDpToPx(dp: Float): Float {
     )
 }
 ```
+
+```kotlin
+// Better try catch
+runCatching {
+    methodThatMightThrow()
+}.getOrElse { ex ->
+    dealWithTheException(ex)
+}
+```
