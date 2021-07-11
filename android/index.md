@@ -76,3 +76,4 @@ By this code every threads called upon retrofit callback will subsribe using IO 
 4. <https://thoughtbot.com/blog/android-imageview-scaletype-a-visual-guide>
 5. <https://www.michaelagreiler.com/code-review-checklist-2>
 6. <https://chiuki.github.io/android-shaders-filters/#/>
+7. Material Component <https://blog.octo.com/en/android-materialshapedrawable>
